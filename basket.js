@@ -22,7 +22,7 @@ module.exports = function fruitBasket(pool) {
     }
 
     async function showTotalForType(fruit_name){
-        var totalPrice = await pool.query('select count(*) from fruit_basket where fruit_name = $1',[fruit_name]);
+        var totalPrice = await pool.query('select sum(quantity) from fruit_basket where fruit_name = $1',[fruit_name]);
         return totalPrice.rows
     }
 

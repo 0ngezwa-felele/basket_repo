@@ -74,7 +74,7 @@ describe('fruit tests', async function(){
         await allFruits.insertFruits('Banana', 3, 9)
         await allFruits.insertFruits('Banana', 3, 9)
         await allFruits.insertFruits('Banana', 3, 9)
-        assert.deepEqual([{count: '3'}], await allFruits.showTotalForType('Banana'));
+        assert.deepEqual([{sum: '27'}], await allFruits.showTotalForType('Banana'));
         
     });
 
