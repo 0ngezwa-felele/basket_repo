@@ -23,15 +23,9 @@ describe('fruit tests', async function(){
          await pool.query("delete from fruit_basket;");
     });
     it('It should be able to create a new fruit basket for a given fruit type, qty & fruit price', async function() {
-        await allFruits.insertFruits('apple', 2, 5)
-        assert.deepEqual([
-            {
-              fruit_name: 'apple',
-              price: '2.00',
-              quantity: 5
-            }
-          ]
-          ,  await allFruits.findAllFruits());
+        
+      
+      assert.deepEqual("Fruit added",await allFruits.insertFruits('Pear',15,5));
         
     });
 

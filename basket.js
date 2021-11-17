@@ -4,7 +4,7 @@ module.exports = function fruitBasket(pool) {
        
             await pool.query('insert into fruit_basket (fruit_name,price,quantity) values ($1,$2,$3)',[fruit_name,price,qty]);
 
-        
+        return "Fruit added"
     }
     async function UpdateFruits(fruit_name, qty){
         fruit1 = await pool.query(`update fruit_basket set quantity = quantity+ $2 where fruit_name = $1`,[fruit_name, qty]);
@@ -37,4 +37,3 @@ module.exports = function fruitBasket(pool) {
     }
 
 }
-
